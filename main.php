@@ -116,6 +116,7 @@ include('tpl_header.php')
     ?>
 
     <!-- BREADCRUMBS -->
+    <div class="breadcrumbs my-3">
     <?php
         $croissant =& plugin_load('syntax', 'croissant');
         if ($croissant !== null) {
@@ -124,6 +125,7 @@ include('tpl_header.php')
             tpl_youarehere();
         }
     ?>
+    </div>
 
     <!-- <?php
     TplUtility::renderTrailBreadcrumb();
