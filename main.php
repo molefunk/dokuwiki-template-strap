@@ -115,9 +115,18 @@ include('tpl_header.php')
     Event::createAndTrigger('TPL_PAGE_TOP_OUTPUT', $data);
     ?>
 
-    <?php
+    <!-- BREADCRUMBS -->
+    <?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
+        <div class="breadcrumbs my-3">
+            <?php if($conf['youarehere']): ?>
+                <div class="youarehere"><?php tpl_youarehere() ?></div>
+            <?php endif ?>
+        </div>
+    <?php endif ?>
+
+    <!-- <?php
     TplUtility::renderTrailBreadcrumb();
-    ?>
+    ?> -->
 
     <div class="row">
 
@@ -202,6 +211,16 @@ include('tpl_header.php')
 <!-- /wrapper -->
 
 <!-- Footer (used also in details.php -->
+<div class="container my-3" style="position: relative">
+  <?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
+      <div class="breadcrumbs">
+          <?php if($conf['breadcrumbs']): ?>
+              <div class="trace"><?php tpl_breadcrumbs() ?></div>
+          <?php endif ?>
+      </div>
+  <?php endif ?>
+</div>
+
 <?php include('tpl_footer.php') ?>
 
 
