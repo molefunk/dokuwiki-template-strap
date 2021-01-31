@@ -141,6 +141,7 @@ include('tpl_header.php')
               class="col-md-<?php echo($mainGridScale) ?> order-first">
 
 
+
             <!-- The content: Show, Edit, .... -->
             <?php tpl_flush() ?>
 
