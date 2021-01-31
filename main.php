@@ -116,13 +116,14 @@ include('tpl_header.php')
     ?>
 
     <!-- BREADCRUMBS -->
-    <?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
-        <div class="breadcrumbs my-3">
-            <?php if($conf['youarehere']): ?>
-                <div class="youarehere"><?php tpl_youarehere() ?></div>
-            <?php endif ?>
-        </div>
-    <?php endif ?>
+    <?php
+        $croissant =& plugin_load('syntax', 'croissant');
+        if ($croissant !== null) {
+            $croissant->tpl();
+        } else {
+            tpl_youarehere();
+        }
+    ?>
 
     <!-- <?php
     TplUtility::renderTrailBreadcrumb();
