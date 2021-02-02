@@ -116,7 +116,7 @@ include('tpl_header.php')
     ?>
 
     <!-- BREADCRUMBS -->
-    <div class="breadcrumbs my-3">
+    <div class="breadcrumbs mt-2 mb-3">
     <?php
         $croissant =& plugin_load('syntax', 'croissant');
         if ($croissant !== null) {
